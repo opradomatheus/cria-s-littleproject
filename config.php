@@ -16,6 +16,10 @@
         else
         {
             echo "Conexão bem sucedida";
+
+            header("Location:/area-acesso.php");
+
+            die();
         }
 
 ?>

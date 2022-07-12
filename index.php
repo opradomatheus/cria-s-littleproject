@@ -1,12 +1,14 @@
 
 <?php
 
-    if(isset($_POST['submit']))
+    include_once('config.php');
+
+    if(isset($_POST['submit']));
 
     {
-        print_r($_POST['name']);
-        print_r($_POST['email']);
-        print_r($_POST['password']);
+        print_r($_POST['vulgo']);
+        print_r($_POST['vulgovirtual']);
+        print_r($_POST['codcria']);
     }
 
 ?>
@@ -28,7 +30,7 @@
 </head>
 <body>
     <div class="container-principal">
-        <form action="index.php" method="POST">
+        
         <h1>
             Área dos crias ( ͡° ͜ʖ ͡°)
         </h1>
@@ -37,21 +39,21 @@
             Só entra quem é cria
         </h3>
 
-        <form action="" method="get">
+        <form action="index.php" method="get">
 
             <div>
                 <label for="name">Vulgo</label>
-                <input type="text" name="name" id="name">
+                <input type="text" name="name" id="vulgo">
             </div>
 
             <div>
                 <label for="name">Vulgo virtual</label>
-                <input type="email" name="email" id="email">
+                <input type="email" name="email" id="vulgovirtual">
             </div>
 
             <div>
                 <label for="name">Código de cria</label>
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" id="codcria">
             </div>
 
             <div class="buttons">
