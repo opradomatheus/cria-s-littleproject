@@ -1,14 +1,22 @@
 <?php
 
-    include_once('config.php');
+    
 
-    if(isset($_POST['submit']));
+    if(isset($_POST['submit']))
 
     {
-        print_r($_POST['vulgo']);
-        print_r($_POST['vulgovirtual']);
-        print_r($_POST['codcria']);
+    
+    include_once('config.php');
+
+    $vulgo = $_POST['vulgo'];
+    $vulgovirtual = $_POST['vulgovirtual'];
+    $codcria = $_POST['codcria'];
+
+   
+
+   $result = mysqli_query($conecta, "INSERT INTO users(vulgo,vulgovirtual,codcria) VALUES ($vulgo,$vulgovirtual,$codcria)");
     }
+
 
 ?>
 
@@ -29,7 +37,6 @@
 </head>
 <body>
     <div class="container-principal">
-        
         <h1>
             Área dos crias ( ͡° ͜ʖ ͡°)
         </h1>
@@ -38,25 +45,25 @@
             Só entra quem é cria
         </h3>
 
-        <form action="index.php" method="get">
+        <form action="index.php" method="POST">
 
             <div>
-                <label for="name">Vulgo</label>
-                <input type="text" name="name" id="vulgo">
+                <label for="vulgo">Vulgo</label>
+                <input type="text" name="vulgo" id="vulgo">
             </div>
 
             <div>
-                <label for="name">Vulgo virtual</label>
-                <input type="email" name="email" id="vulgovirtual">
+                <label for="vulgovirtual">Vulgo virtual</label>
+                <input type="email" name="vulgovirtual" id="vulgovirtual">
             </div>
 
             <div>
-                <label for="name">Código de cria</label>
-                <input type="password" name="password" id="codcria">
+                <label for="codcria">Código de cria</label>
+                <input type="password" name="codcria" id="codcria">
             </div>
 
             <div class="buttons">
-                <input type="submit" value="Seja cria">
+                <input type="submit" name= "submit" id="submit" value="Seja cria">
             </div>
 
         </form>
